@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic URL Generator</title>
+    <script>
+        function generateURL() {
+            // Get input values
+            const speedMin = document.getElementById('speedMin').value;
+            const speedMax = document.getElementById('speedMax').value;
+            const glideMin = document.getElementById('glideMin').value;
+            const glideMax = document.getElementById('glideMax').value;
+
+            // Construct the URL
+            const url = `https://trydiscs.com/explore/?speed=min-${speedMin},max-${speedMax}&glide=min-${glideMin},max-${glideMax}&turn=min-0,max-0&fade=min-1,max-2`;
+            
+            // Display the URL
+            document.getElementById('resultURL').innerText = url;
+        }
+    </script>
+</head>
+<body>
+    <h1>Dynamic URL Generator</h1>
+    <label for="speedMin">Speed Min:</label>
+    <input type="number" id="speedMin" required><br>
+
+    <label for="speedMax">Speed Max:</label>
+    <input type="number" id="speedMax" required><br>
+
+    <label for="glideMin">Glide Min:</label>
+    <input type="number" id="glideMin" required><br>
+
+    <label for="glideMax">Glide Max:</label>
+    <input type="number" id="glideMax" required><br>
+
+    <button onclick="generateURL()">Generate URL</button>
+
+    <h2>Generated URL:</h2>
+    <p id="resultURL"></p>
+</body>
+</html>
