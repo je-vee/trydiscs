@@ -7,13 +7,13 @@
     <script>
         function generateURL() {
             // Get input values
-            const speedMin = document.getElementById('speedMin').value;
-            const speedMax = document.getElementById('speedMax').value;
-            const glideMin = document.getElementById('glideMin').value;
-            const glideMax = document.getElementById('glideMax').value;
+            const speed = document.getElementById('speed').value;
+            const glide = document.getElementById('glide').value;
+            const turn = document.getElementById('turn').value;
+            const fade = document.getElementById('fade').value;
         
             // Construct the URL
-            const url = `https://trydiscs.com/explore/?speed=min-${speedMin},max-${speedMax}&glide=min-${glideMin},max-${glideMax}&turn=min-0,max-0&fade=min-1,max-2`;
+            const url = `https://trydiscs.com/explore/?speed=min-${speed},max-${speed}&glide=min-${glide},max-${glide}&turn=min-${turn},max-${turn}&fade=min-${fade},max-${fade}`;
         
             // Create a clickable link
             const link = `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
@@ -25,17 +25,17 @@
 </head>
 <body>
     <h1>Dynamic URL Generator</h1>
-    <label for="speedMin">Speed Min:</label>
-    <input type="number" id="speedMin" required><br>
+    <label for="speed">Speed Min:</label>
+    <input type="number" id="speed" required><br>
 
-    <label for="speedMax">Speed Max:</label>
-    <input type="number" id="speedMax" required><br>
+    <label for="glide">Speed Max:</label>
+    <input type="number" id="glide" required><br>
 
-    <label for="glideMin">Glide Min:</label>
-    <input type="number" id="glideMin" required><br>
+    <label for="turn">Glide Min:</label>
+    <input type="number" id="turn" required><br>
 
-    <label for="glideMax">Glide Max:</label>
-    <input type="number" id="glideMax" required><br>
+    <label for="fade">Glide Max:</label>
+    <input type="number" id="fade" required><br>
 
     <button onclick="generateURL()">Generate URL</button>
 
