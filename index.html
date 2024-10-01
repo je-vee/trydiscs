@@ -11,12 +11,15 @@
             const speedMax = document.getElementById('speedMax').value;
             const glideMin = document.getElementById('glideMin').value;
             const glideMax = document.getElementById('glideMax').value;
-
+        
             // Construct the URL
             const url = `https://trydiscs.com/explore/?speed=min-${speedMin},max-${speedMax}&glide=min-${glideMin},max-${glideMax}&turn=min-0,max-0&fade=min-1,max-2`;
+        
+            // Create a clickable link
+            const link = `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
             
-            // Display the URL
-            document.getElementById('resultURL').innerText = url;
+            // Display the clickable URL
+            document.getElementById('resultURL').innerHTML = link;
         }
     </script>
 </head>
